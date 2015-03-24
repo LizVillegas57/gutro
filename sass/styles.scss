@@ -1,0 +1,1160 @@
+@import 'bootstrap.css';
+@import 'normalize.css';
+@import 'animate.css';
+@import '_configuration';
+@import '_mixins';
+
+/*  ======================================================================== */
+
+/* End  ======================================================================== */
+
+/* General Styles ======================================================================== */
+	html, body{
+	  padding: 0;
+	  margin: 0;
+	}
+	body{
+	  	margin:$margin0;
+	  	font-family:$typeSpecial;
+	  	position: relative;
+	  	-webkit-text-size-adjust: none;
+	  	font-size: $baseFontSize;
+		background-repeat: repeat;
+		background-color:$fourthColor;
+	}
+	body *{
+	  text-shadow: none;
+	}
+	ul{
+	  list-style:none;
+	}
+	a{
+	  &:hover{
+	    text-decoration: none;
+	  }
+	  &:focus{
+	    outline: none;
+	    text-decoration: none;
+	  }
+	}
+	h1{
+	  margin:0;
+	}
+	p{
+	  margin:0;
+	  padding:0;
+	}
+	img{
+    	max-width:100%;
+	    height:auto;
+	    display:block;
+	}
+	.hidden{
+		display:none;
+	}
+/* End General Styles ======================================================================== */
+
+/* Loading ======================================================================== */
+	.loading{
+		text-align: center;
+		margin-top: 10%;
+		img{
+			margin: 0 auto;
+			&.loadingGear{
+				width: 45px;
+				margin: 40px auto 0;
+			}
+		}
+		span{
+			display: block;
+			color: $secondaryColor;
+			font-weight: 200;
+		}
+	}
+/* End Loading ======================================================================== */
+
+/* Icons ======================================================================== */
+	.icons{
+		background: url(../images/iconsHome.png) no-repeat;
+		display: block;
+		&.arrowDown{
+			width: 45px;
+			height: 45px;
+			-ms-transform: rotate(-45deg); /* IE 9 */
+		    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+		    transform: rotate(-45deg);
+		    cursor: pointer;
+		}
+		&.arrowUp{
+			width: 45px;
+			height: 45px;
+			cursor: pointer;
+			background-position: -54px 0;
+			margin:14px auto 0;
+		}
+		&.phone{
+			width: 20px;
+			height: 20px;
+			background-position: -67px 0;
+			margin: 0;
+			background-size:106px;
+			vertical-align: text-bottom;
+		}
+		&.location{
+			width: 20px;
+			height: 20px;
+			background-position: -88px 0;
+			margin: 0;
+			background-size:106px;
+			vertical-align: text-bottom;
+		}
+		&.contact{
+			width: 20px;
+			height: 20px;
+			background-position: -47px 0;
+			margin: 0;
+			background-size:106px;
+			vertical-align: text-bottom;
+		}
+	}
+/* End Icons ======================================================================== */
+
+/* Navigation ======================================================================== */
+	.customNavigation{
+		background-color:$fourthColor;
+		border:0;
+		border-radius:0;
+		height: 100px;
+		margin:0;
+		.container-fluid{
+			.navbar-brand{
+				margin: 0;
+				padding: 0;
+				height: auto;
+				width: auto;
+				display: inline-block;
+				float: left;
+				img{
+					&.logoMobile{
+						display: none;
+					}
+				}
+			}
+		}
+		.navbar-header{
+			width: 28%;
+		}
+	 	.navbar-nav{
+	 		float: right;
+	 		margin-top:22px;
+		 	li{
+		 		a{
+		 			color: $secondaryColor;
+		 			font-size: 14px;
+		 			text-transform: uppercase;
+		 			font-weight: 500;
+		 			&:hover,&.active{
+		 				color: darken($primaryColor, 15%);
+		 			}
+		 		}
+		 	}
+	 	}
+	 	.navbar-collapse{
+	 		padding:0;
+	 	}
+	 	&.fixed{ 
+			z-index: 9999; 
+			position: fixed; 
+			left: 0; 
+			top: 0; 
+			width: 100%;
+			box-shadow: 0 -12px 12px 12px $secondaryColor;
+		} 
+	}
+/* End Navigation ======================================================================== */
+
+/* Slider ======================================================================== */
+	.sliderHome{
+		position:relative;
+		overflow: hidden;
+		img{
+			width: 100%;
+			height: 444px;
+		}
+		h1{
+			position:absolute;
+			font-size: 50px;
+			color:$fourthColor;
+			text-align:center;
+			font-weight: 800;
+			width: 90%;
+			text-transform: uppercase;
+			top: 30%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+		div{
+			background-color:$fourthColor;
+			width: 100px;
+			height: 100px;
+			position:absolute;
+			bottom:-55px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		 	-ms-transform: rotate(45deg); /* IE 9 */
+		    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+		    transform: rotate(45deg);
+		    padding: 6px 0 0 6px;
+		    cursor: pointer;
+		}
+	}
+/* End Slider ======================================================================== */
+
+/* Secondary Menu ======================================================================== */
+	.secondaryMenu{
+		height: 70px;
+		background-color:$secondaryColor;
+		.menu1{
+			margin: 0;
+			padding:0;
+			line-height: 70px;
+			li{
+				float: left;
+				a{
+					color: $fourthColor;
+					font-weight: 300;
+					padding:0 20px;
+					text-transform: uppercase;
+					display: block;
+					&:hover, &.active, &:focus{
+						background:lighten($secondaryColor, 5%);
+					}
+				}
+			}
+		}
+		.square{
+			background:darken($primaryColor, 15%);
+			height: 70px;
+			width: 70px;
+			float: right;
+			cursor: pointer;
+		}
+		.dropdown{
+			display: none;
+			float: left;
+		}
+		&.fixed{ 
+			z-index: 9999; 
+			position: fixed; 
+			left: 0; 
+			top: 0; 
+			width: 100%;
+		} 
+	}
+/* End Secondary Menu ======================================================================== */
+
+/* Sections======================================================================== */
+	section{
+		margin: 80px;
+		h1{
+			font-weight: 700;
+			font-size: 34px;
+			margin:0 0 60px;
+			color: $secondaryColor;
+			text-transform: uppercase;
+			text-align: center;
+			&:after{
+				background:darken($primaryColor, 15%);
+				height: 1px;
+				width: 15%;
+				display: block;
+				content:" ";
+				text-align: center;
+				margin: 15px auto;
+			}
+		}
+		p{
+			font-weight: 300;
+		}
+		.colLeft{
+			padding: 0 70px 0 0;
+		}
+		.colRight{
+			padding:0;
+		}
+		&.welcome{
+			&:after{
+				background:darken($primaryColor, 15%);
+				height: 1px;
+				width: 20%;
+				display: block;
+				content:" ";
+			}
+			h1{
+				text-align: left;
+				font-size: 30px;
+				&:after{
+					height: 0;
+				}
+			}
+			.colLeft{
+				p{
+					color: $secondaryColor;
+				}
+			}
+			.colRight{
+				h4{
+					font-weight: 600;
+				}
+			}
+		}
+		&.weDo{
+			.box{
+				padding:0;
+				width: 33.3%;
+				float: left;
+				cursor: pointer;
+				position:relative;
+				img{
+					width: 100%;
+				}
+				.textIntro{
+					position:absolute;
+					top: 0;
+					background: rgba(171, 37, 42, 0.8); 
+					color:$fourthColor;
+					height: 100%;
+					width: 100%;
+					padding:20px;
+  					overflow: hidden;
+  					visibility:hidden;
+				  	opacity:0;
+				  	transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+					h5{
+						font-size: 16px;
+						font-weight: 600;
+						margin: 0 0 10px;
+					}
+					p{
+						font-size: 12px;
+					}
+				}
+				&:hover,&:active, &:focus{
+					.textIntro{
+						visibility:visible;
+					  	opacity:1;
+					  	transition-delay:0s;
+					}
+				}
+			}
+			&.paddingTop{
+				padding-top: 70px;
+			}
+		}
+		&.someClients{
+			margin: 80px 0;
+			text-align:center;
+			&.paddingTop{
+				padding-top: 140px;
+			}
+			img{
+				margin: 0 auto;
+				display: inline-block;
+			}
+		}
+		&.company{
+			margin: 0;
+			.rowCol{
+				margin: 80px;
+				p{
+					margin: 40px 0;
+					text-align: center;
+					font-size: 18px;
+				}	
+				&.recognition{
+					p{
+						text-align: left;
+						margin: 20px 0;
+					}
+				}
+			}
+			.sliderCompany{
+				background-image: url(../images/sliderEmpresa.jpg);
+				height: 400px;
+				position: relative;
+				width: 100%;
+				background-position: center center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				text-align: center;
+				.block{
+					display: inline-block;
+					width: 33%;
+					margin: 60px 0 0;
+					cursor: pointer;
+					position:relative;
+					img{
+						margin: 0 auto;
+						&.mobileIcon{
+							display: none;
+						}
+					}
+					p{
+						font-size:30px;
+						color:$fourthColor;
+						text-transform: uppercase;
+						font-weight: 200;
+						margin: 5px 0 0;
+					}
+					&::before {
+					    border-left: 10px solid transparent;
+					    border-top: 10px solid rgba(171, 37, 42, 0.8);
+					    border-right: 10px solid transparent;
+					    height: 0px;
+					    width: 0px;
+					    content:'';
+					    bottom: 35px;
+					    left: 0;
+					    right: 0;
+					    margin: 0 auto;
+					    z-index: 9
+					}
+					&::after {
+					    content: attr(data-tooltip);
+					    top: -45px; 
+					    left: 0;
+					    right: 0;
+					    margin: 0 auto;
+					    background: rgba(171, 37, 42, 0.8); 
+					    padding: 20px;
+					    color: $fourthColor;
+					    width:90%;
+					    height: 100%;
+					}
+					&::after, &::before {
+					    position: absolute;
+					    opacity: 0;
+					    visibility: hidden;
+					    -webkit-transition: all 0.4s ease-out;
+					    -moz-transition: all 0.4s ease-out;
+					    transition: all 0.4s ease-out;    
+					}
+					&:hover::after, &:hover::before {
+					    opacity: 1;
+					    visibility: visible;
+					}
+				}
+			}	
+			.belongTo{
+				a{
+					font-size: 24px;
+					color: darken($primaryColor, 15%);
+					-webkit-transition: all 0.4s ease-out;
+				    -moz-transition: all 0.4s ease-out;
+				    transition: all 0.4s ease-out;  
+				    text-transform: uppercase; 
+				    display: block;
+					&:hover{
+						color: $secondaryColor;
+					}
+				}
+				p{
+					margin: 10px 0;
+					text-align: left;
+				}
+			}
+		}
+		&.clients{
+			.rowClients{
+				width: 33%;
+				float:left;
+				display: block;
+				position: relative;
+				cursor: pointer;
+				img{
+					margin: 0 auto;
+				}
+				.tooltipC{
+					position:absolute;
+					top: 0;
+					background: rgba(171, 37, 42, 0.8); 
+					color:$fourthColor;
+					height: 100%;
+					width: 100%;
+					padding:20px;
+  					overflow: hidden;
+  					visibility:hidden;
+				  	opacity:0;
+				  	transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+					h5{
+						font-size: 16px;
+						font-weight: 600;
+						margin: 0 0 10px;
+					}
+					ul {
+						margin: 10px 0;
+						padding:0;
+						li{
+							font-size: 12px;
+						}
+					}
+				}
+				&:hover,&:active, &:focus{
+					.tooltipC{
+						visibility:visible;
+					  	opacity:1;
+					  	transition-delay:0s;
+					}
+				}
+			}
+		}
+		&.services{
+			margin: 80px 0;
+			.colLeft{
+				background:#f6f6f6;
+				color: $secondaryColor;
+				text-align: center;
+				padding:40px 20px;
+			}
+			.colRight{
+				.block{
+					width: 25%;
+					text-align: center;
+					display: block;
+					float: left;
+					position:relative;
+					cursor: pointer;
+					img{
+						margin: 0 auto;
+					}
+					span{
+						display: block;
+						padding-top:20px;
+					}
+					&::before {
+					    border-left: 10px solid transparent;
+					    border-top: 10px solid rgba(171, 37, 42, 0.8);
+					    border-right: 10px solid transparent;
+					    height: 0px;
+					    width: 0px;
+					    content:'';
+					    bottom: 30px;
+					    left: 0;
+					    right: 0;
+					    margin: 0 auto;
+					    z-index: 9
+					}
+					&::after {
+					    content: attr(data-tooltip);
+					    top: -40px; 
+					    left: 0;
+					    right: 0;
+					    margin: 0 auto;
+					    background: rgba(171, 37, 42, 0.8); 
+					    padding: 10px;
+					    color: $fourthColor;
+					    width:100%;
+					    height: 100%;
+					    font-size: 12px;
+					}
+					&::after, &::before {
+					    position: absolute;
+					    opacity: 0;
+					    visibility: hidden;
+					    -webkit-transition: all 0.4s ease-out;
+					    -moz-transition: all 0.4s ease-out;
+					    transition: all 0.4s ease-out;    
+					}
+					&:hover::after, &:hover::before {
+					    opacity: 1;
+					    visibility: visible;
+					}
+				}
+			}
+		}
+		&.contact{
+			article{
+				text-align: center;
+				margin-bottom: 40px;
+				h2{
+					font-size: 16px;
+					font-weight: 500;
+				}
+			}
+			aside{
+				.error { 
+					padding: 10px; 
+					background: darken($primaryColor, 15%); 
+					margin-bottom: 15px; 
+					color: $fourthColor;
+				}
+				.checked { 
+					display:none; 
+					background: none; 
+					border: 0px; 
+					margin-top: 0px; 
+					padding: 0px; 
+					text-indent: -5000px;
+				}	
+				em { 
+					color: darken($primaryColor, 15%);
+				}
+				.stage { 
+					margin-bottom: 20px;
+				}
+				.requiredNote { 
+					margin: 20px 0px 20px; 
+					color: $secondaryColor; 
+					font-weight: bold;
+				}
+				.success { 
+					padding: 10px; 
+					background: darken($primaryColor, 15%); 
+					margin-bottom: 15px; 
+					color: $fourthColor;
+				}
+				label { 
+					display:block; 
+					float:none; 
+					font-size:12px; 
+					width:auto; 
+					font-weight: bold; 
+					margin-bottom: 7px; 
+					color: $secondaryColor;
+				}
+				.contactForm {
+					div{
+						float: left;
+						width: 50%;
+						&.textArea, &.buttone{
+							width: 100%;
+						}
+						label{
+							&.error{
+								width: 50%;
+								margin:0 auto 10px;
+							}
+						}
+					}
+					input,textarea{
+						background: $fourthColor;
+					    border: 1px solid lighten($secondaryColor, 80%);
+					    color: lighten($secondaryColor, 50%);
+					    display: block;
+					    font-size: 14px;
+					    font-weight: 200;
+					    outline: 0 none;
+					    padding: 12px 14px;
+					    transition: all 0.2s ease-out 0s;
+					    width: 99%;
+					    margin-bottom: 10px;
+					    margin-right: 10px;
+					    &.button{
+					    	background: darken($primaryColor, 15%);
+						    color: $fourthColor;
+						    display: block;
+						    font-size: 14px;
+						    font-weight: 300;
+						    padding: 10px 0;
+						    text-align: center;
+						    transition: all 0.2s ease-out 0s;
+						    float: right;
+						    border: 1px solid transparent;
+						    width: 30%;
+						    margin-right: 0;
+						    &:hover{
+							    background: $fourthColor;
+							    border: 1px solid darken($primaryColor, 15%);
+							    color: $secondaryColor;
+							}
+					    }
+					    &:focus{
+						    background: darken($primaryColor, 15%);
+						    color: $fourthColor;
+						}
+						&.email, &.asunto{
+							margin-right: 0;
+						}
+					}
+					textarea{
+						width: 100%;
+						height: 140px;
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+/* End Section======================================================================== */
+
+/* Footer ======================================================================== */
+	footer{
+		background: darken($primaryColor, 15%);
+		border-top:10px solid darken($primaryColor, 30%);
+		padding:60px 80px 30px;
+		width: 100%;
+		.colLeft{
+			width: 5%;
+			margin: 0 auto;
+		}
+		.colRight{
+			width: 100%;
+			float: left;
+			.block{
+				width: 33.33%;
+				float: left;
+				color: $fourthColor;
+				text-align: center;
+				ul{
+					margin:10px 0;
+					padding:0;
+				}
+				span{
+					display: inline-block;
+				}
+				h4{
+					font-size: 20px;
+					margin: 0 0 30px 10px;
+					text-transform: uppercase;
+					font-weight: 700;
+					display: inline-block;
+				}
+				p{
+					text-align: center;
+					font-weight: 100;
+				}
+			}
+		}
+		.copyrights{
+			text-align: center;
+			border-top:1px solid $fourthColor;
+			color: $fourthColor;
+			padding:10px 0;
+			font-size: 12px;
+			font-weight: 700;
+			margin: 20px 0 0;
+		}
+		a{
+			color: $fourthColor;
+			transition: all 0.2s ease-out 0s;
+			&:hover{
+				color:darken($fourthColor, 30%)
+			}
+		}
+	}
+/* End  Section Welcome======================================================================== */
+
+/* Media Queries ======================================================================== */
+	@media (max-width: 991px){
+		.sliderHome{
+			h1{
+				font-size: 40px;
+				top: 25%;
+			}
+			img{
+				height: 400px;
+			}
+		}
+		section{
+			.colRight {
+				padding: 0 0 20px 0;
+			}
+			&.weDo{
+				.box{
+					width: 50%;
+					&:last-child{
+						float:none;
+						display: block;
+						margin: 0 auto;
+						clear: both;
+					}
+				}
+			}
+			&.welcome{
+				h1{
+					text-align: center;
+				}
+			}
+			&.services{
+				.colRight{
+					margin: 40px 0 0;
+				}
+			}
+			&.company{
+				.belongTo{
+					img{
+						margin: 0 auto;
+					}
+					a{
+						text-align: center;
+					}
+					p{
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 767px){
+		.customNavigation{
+		 	.navbar-nav{
+		 		float: none;
+		 		margin-top:0;
+		 		margin-bottom:0;
+			 	li{
+			 		&:after{
+			 			border-bottom:1px solid $secondaryColor;
+			 			display: block;
+			 			content:" ";
+			 		}
+			 		&:last-child{
+			 			&:after{
+				 			border-bottom:0;
+				 		}
+			 		}
+			 		a{
+			 			color: $fourthColor;
+		 				font-weight: 700;
+		 				padding-left:40px;
+			 			&:hover,&.active{
+			 				color: darken($primaryColor, 15%);
+			 				background-color:$fourthColor;
+			 				&:after{
+					 			border-bottom:20px solid transparent;
+					 			border-top:20px solid transparent;
+					 			border-left:10px solid darken($primaryColor, 15%);
+					 			display: block;
+					 			content:" ";
+					 			position:absolute;
+					 			left: 20px;
+					 			top:0;
+					 		}
+					 		&:before{
+					 			display: block;
+					 			content:" ";
+					 			position:absolute;
+					 			left: 0;
+					 			top:0;
+					 			background-color:darken($primaryColor, 15%);
+					 			width: 20px;
+					 			height: 40px;
+					 		}
+			 			}
+			 		}
+			 	}
+		 	}
+		 	.navbar-collapse{
+		 		border-top:1px solid darken($primaryColor, 15%);
+		 		border-bottom:1px solid darken($primaryColor, 15%);
+		 		background-color:darken($primaryColor, 15%);
+	 		 	padding-left: 15px;
+				padding-right: 15px;
+				position: absolute;
+				width: 100%;
+				z-index: 1;
+		 	}
+		 	.navbar-toggle{
+		 		background-color:darken($primaryColor, 15%);
+		 		border:1px solid darken($primaryColor, 15%);
+		 		margin-top: 30px;
+		 		margin-right: 0;
+		 		&.collapsed{
+		 			background-color:$fourthColor;
+			 		border:1px solid darken($primaryColor, 15%);
+		 		}
+		 		&:hover, &:focus, &.navbar-default{
+		 			background-color:darken($primaryColor, 15%);
+		 			border:1px solid darken($primaryColor, 15%);
+		 			.icon-bar{
+			 			background-color:$fourthColor;
+			 		}
+		 		}
+		 		.icon-bar{
+		 			background-color:darken($primaryColor, 15%);
+		 		}
+		 	}
+		 	.navbar-header{
+				width: 100%;
+				margin: 0;
+			}
+		}
+		.sliderHome{
+			h1{
+				font-size: 28px;
+				top: 20%;
+			}
+			img{
+				height: 270px;
+			}
+			div{
+				width: 80px;
+				height: 80px;
+			    padding: 8px 0 0 8px;
+			}
+		}
+		.icons{
+			&.arrowDown{
+				background-size: 106px;
+				width: 20px;
+				height: 20px;
+			}
+		}
+		.secondaryMenu{
+			.menu1{
+				margin: 0 0 0 20px;
+				li{
+					a{
+						padding:0 10px;
+					}
+				}
+			}
+		}
+		section{
+			margin: 30px 20px;
+			.colLeft{
+				padding: 0;
+			}
+			&.weDo{
+				.box{
+					.textIntro{
+						padding:10px;
+						h5{
+							margin: 0 0 10px;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+			&.company{
+				.sliderCompany{
+					height: 340px;
+					.block{
+						width: 30%;
+						&::after{
+							width: 100%;
+							padding:5px;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+			&.clients{
+				.rowClients{
+					width: 50%;
+				}
+			}
+			&.services{
+				.colRight{
+					.block{
+						width: 100%;
+						float: none;
+						display: block;
+						margin-bottom: 40px;
+						&:last-child{
+							margin-bottom: 0;
+						}
+						&:first-child{
+							&::after {
+							    height: 100%;
+							}
+							&::before {
+							    border-top: 10px solid rgba(171, 37, 42, 0.8);
+							}
+						}
+					}
+				}
+			}
+			&.contact{
+				aside{
+					.contactForm{
+						div{
+							float: none;
+							width: 100%;
+						}
+						input{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		footer{
+			padding: 40px;
+			.colRight{
+				.block{
+					float: none;
+					width: 100%;
+					p{
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 490px) {
+		.sliderHome{
+			h1{
+				font-size: 14px;
+				top: 34%;
+			}
+			div{
+				display: none;
+			}
+			img{
+				height: 160px;
+			}
+		}
+		.customNavigation{
+			.container-fluid{
+				.navbar-brand{
+					margin-top: 20px;
+    				width: 68%;
+					img{
+						width: auto;
+						&.logoMobile{
+							display: block;
+						}
+						&.logoDesktop{
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		.secondaryMenu{
+			.menu1{
+				display: none;
+			}
+			.square{
+				background:darken($primaryColor, 15%);
+				height: 70px;
+				width: 70px;
+				float: right;
+			}
+			.dropdown{
+				display: block;
+				.btn-default{
+					background:transparent;
+					border:0;
+					color: $fourthColor;
+					text-transform: uppercase;
+					font-weight: 800;
+					padding:0;
+					margin: 0 0 0 20px;
+					line-height:70px;
+					&:focus, &:active, &.active{
+						outline: 0;
+						box-shadow: 0 0 0 transparent;
+						background:transparent;
+					}
+					.caret{
+						margin-left: 10px;
+					}
+				}
+				.dropdown-menu{
+					background:darken($primaryColor, 15%);
+					border-radius:0;
+					margin: 0;
+					padding:0;
+					li{
+						a{
+							color:$fourthColor;
+							text-transform: uppercase;
+							font-size: 12px;
+							font-weight: 600;
+							padding:10px;
+							&:hover, &:active, &.active{
+								background:$fourthColor;
+								color: darken($primaryColor, 15%);
+							}
+						}
+					}
+				}
+			}
+		}
+		section{
+			h1{
+				font-size: 15px;
+				margin: 0 0 20px;
+			}
+			p{
+				font-size: 14px;
+			}
+			&.welcome{
+				h1{
+					font-size: 15px;
+				}
+			}
+			&.weDo{
+				.box{
+					width: 80%;
+					float: none;
+					margin: 0 auto;
+				}
+			}
+			&.company{
+				.rowCol{
+					margin: 30px 20px;
+					p{
+						font-size: 14px;
+					}
+				}
+				.sliderCompany{
+					background-image:none;
+					height: auto;
+					.block{
+						display: block;
+						width: 100%;
+						img{
+							&.mobileIcon{
+								display: block;
+							}
+							&.desktopIcon{
+								display: none;
+							}
+						}
+						p{
+							color: $secondaryColor;
+						}
+						&::after{
+							width: 90%;
+							padding:20px;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+			&.clients{
+				.rowClients{
+					width: 100%;
+					float: none;
+				}
+			}
+			&.contact{
+				aside {
+					.contactForm {
+						div{
+							float: none;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		footer{
+			padding:20px;
+			.colRight {
+				.block {
+					h4{
+						margin: 0 0 10px 5px;
+					}
+				}
+			}
+			.colLeft{
+				width: 40%;
+			}
+		}
+	}
+/* End Media Queries ======================================================================== */

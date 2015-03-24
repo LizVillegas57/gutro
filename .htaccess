@@ -1,0 +1,40 @@
+AddDefaultCharset UTF-8
+
+# Default cache 30 seconds
+<IfModule mod_expires.c>
+   ExpiresActive On
+   ExpiresDefault A30
+</ifModule>
+
+<filesMatch ".(ico|gif|jpg|jpeg|png|swf|css|js|html|htm)$">
+   <IfModule mod_expires.c>
+      # 1 month
+      ExpiresDefault A2419200
+   </ifModule>
+   <IfModule mod_headers.c>
+      Header append Cache-Control "public"
+   </ifModule>
+</filesMatch>
+
+# No caching
+<filesMatch ".(php|cgi)$">
+   <IfModule mod_expires.c>
+      ExpiresDefault A0
+   </ifModule>
+   <IfModule mod_headers.c>
+      Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+      Header set Pragma "no-cache"
+   </ifModule>
+</filesMatch>
+
+ErrorDocument 404 /404.html
+AddHandler server-parsed .html
+AddDefaultCharset utf-8
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

@@ -1,0 +1,20 @@
+/*  Definicion de mixins */
+ 
+@mixin bgHome{
+	height: 1200px;
+	margin: 0;
+}
+ 
+ @mixin centerPositionAbsolute{
+  	margin: 0 auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
